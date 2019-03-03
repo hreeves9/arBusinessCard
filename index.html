@@ -3,14 +3,37 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene vr-mode-ui="enabled: false" embedded arjs='sourceType: webcam;'>
+		<a-assets>
+			<img id = "portrait" src = "https://raw.githubusercontent.com/hreeves9/arBusinessCard/master/portrait.png">
+		</a-assets>
+
+
+
 		<a-marker type='pattern' url='https://raw.githubusercontent.com/hreeves9/arBusinessCard/master/pattern-marker.patt'>
 
-			<a-entity position = "4 0 0" rotation = "270 0 0" text="value: HARVEY REEVES; width: 5;"></a-entity>
+			<a-entity rotation = "270 0 0" text="value: HARVEY REEVES; width: 8;">
+				<a-animation attribute="position"
+					dur = "6000"
+					from="3 0 -0.5"
+					to = "6 0 -0.5">
+				</a-animation>
+         </a-entity>
+         <a-entity rotation = "270 0 0" text="value: Software Developer\n ML/Web/iOS; width: 5;">
+				<a-animation attribute="position"
+					dur = "6000"
+					from="1 0 0"
+					to = "6 0 0">
+				</a-animation>
+         </a-entity>
+         <a-image rotation = "270 0 0" src = "#portrait">
+
+         </a-image>
+         
+         
 		</a-box>
 		</a-marker>
 		<a-entity camera></a-entity>
 	</a-scene>
 </body>
-
 
 
